@@ -70,13 +70,24 @@ body {
 /* Banner */
 .banner {
     text-align: center;
-    padding: 100px 20px;
-    background-image: url('assets/img/logo-novo.png'); /* Substitua pelo caminho da sua imagem */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    padding: 0; /* Remova o padding para garantir que a imagem preencha todo o espaço */
+    background-color: #f0f0f0; /* Substitua pela cor de fundo desejada */
     color: var(--branco); /* Ajuste a cor do texto para contraste */
-    height: 70vh;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
+    position: relative; /* Necessário para o posicionamento absoluto da imagem */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche o contêiner mantendo a proporção */
+    position: absolute; /* Faz a imagem preencher todo o contêiner */
+    top: 0;
+    left: 0;
 }
 
 .banner h1 {
