@@ -41,7 +41,24 @@ body {
     z-index: 1000;
 }
 
-.navbar ul {
+.navbar .logo img {
+    height: 55px;
+    width: auto;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 32px; /* Ajuste o tamanho conforme necessário */
+    height: 32px; /* Ajuste o tamanho conforme necessário */
+}
+
+.navbar-menu {
     display: flex;
     list-style: none;
     margin: 0;
@@ -49,7 +66,7 @@ body {
     gap: var(--spacing-sm);
 }
 
-.navbar a {
+.navbar-menu a {
     color: var(--branco);
     text-decoration: none;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -58,13 +75,32 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar-menu a:hover {
     background-color: var(--preto);
 }
 
-.navbar .logo img {
-    height: 55px;
-    width: auto;
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu a {
+        padding: var(--spacing-sm);
+        text-align: center;
+        width: 100%;
+    }
 }
 
 /* Banner */
@@ -210,6 +246,7 @@ footer {
     .navbar ul {
         flex-direction: column;
         width: 100%;
+        padding: 0;
     }
 
     .navbar a {
@@ -218,9 +255,63 @@ footer {
         width: 100%;
     }
 
+    .banner {
+        height: auto;
+        padding: 20px;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: static;
+    }
+
     .skills-list {
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+
+    form {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Estilos para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .navbar {
+        padding: var(--spacing-sm);
+    }
+
+    .banner {
+        padding: 10px;
+    }
+
+    .banner h1 {
+        font-size: 1.5em;
+    }
+
+    .banner p {
+        font-size: 1em;
+    }
+
+    .skills-list li {
+        font-size: 1em;
+    }
+
+    form {
+        padding: var(--spacing-sm);
+    }
+
+    .social-links .btn {
+        padding: var(--spacing-sm);
+        font-size: 0.9em;
     }
 }
 
