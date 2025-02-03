@@ -51,6 +51,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    margin-left: auto; /* Garante que o botão fique à direita */
 }
 
 .hamburger img {
