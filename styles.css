@@ -41,6 +41,11 @@ body {
     z-index: 1000;
 }
 
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
 .navbar .logo img {
     height: 55px;
     width: auto;
@@ -84,6 +89,10 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+    }
+
+    .navbar {
+        justify-content: space-between;
     }
 
     .navbar-menu {
