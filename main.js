@@ -56,6 +56,11 @@ if (navLinks.length > 0) {
         });
     });
 }
+
+document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navbar-menu').classList.toggle('active');
+});
+
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
       this.mobileMenu = document.querySelector(mobileMenu);
